@@ -1,0 +1,112 @@
+{%extends "authenticate/base.html"%}
+{%block title%}
+	welcome page
+{%endblock%}
+{%block body%}
+{% load staticfiles %}
+     <div class="container-fluid wall">
+     	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     	<div class="row" style="background-color: rgba(14,23,36,0.3); height: 400px; position: relative;">
+     		<div class="col-6"style="margin-top: 200px;"><center>
+     			<button type="button" class="btn btn-primary" style="font-size: 30px; font-weight: bold; width: 350px;" >I want to work</button>
+     		</center></div>
+     		<div class="col-6" style="margin-top: 200px;">
+     			<center><button type="button" class="btn btn-primary" style="font-size: 30px; font-weight: bold; width: 350px;">I want to hire</button>
+     		</center></div>
+     	</div>
+     </div>
+
+     <br><br><br>
+     <div class="container" >
+     	<center><h1 style="color:rgb(14,23,36); ">categories</h1>
+     		<div class="col-4"><hr noshade size="3px" style="color:rgba(14,23,36,0.3); "></div></center>
+     		<br><br>
+
+     	<div class="row">
+     		<div class="col-4">
+     			<center>
+     			<i class="fas fa-tv" style="font-size: 100px; color:#2169fd;"></i>
+     			<br><br>
+     			<h2>computer science</h2>
+     		</center>
+     		</div>
+     		<div class="col-4">
+     			<center>
+     			<i class="fas fa-paint-brush" style="font-size: 100px; color:#2169fd;"></i>
+     			<br><br>
+     			<h2>design</h2></center>
+     		</div>
+     		<div class="col-4">
+     			<center>
+     			<i class="fas fa-money-check-alt" style="font-size: 100px; color:#2169fd;"></i>
+     			<br><br>
+     			<h2>business</h2></center>
+     		</div>
+
+     	</div>
+     	<br>
+     	<br>
+     	<div class="row">
+     		<div class="col-6">
+     			<center>
+     			<i class="fas fa-gavel" style="font-size: 100px; color:#2169fd;"></i>
+     			<br><br>
+     			<h2>law</h2></center>
+     		</div>
+
+     		<div class="col-6">
+     			<center>
+     			<i class="fas fa-phone" style="font-size: 100px; color:#2169fd;"></i>
+     			<br><br>
+     			<h2>call center</h2></center>
+     		</div></div>
+     </div>
+     <div id="about" class="container">
+     	<center><h1  style="color:rgb(14,23,36); padding-top:50px;">About Us</h1>
+     		<div class="col-4"><hr noshade size="3px" style="color:rgba(14,23,36,0.3); "></div></center>
+     		<br><br>
+     		<div class="row">
+     			<div class="col-6">
+     				<center><h2>Our Team</h2></center>
+     				<img src="{% static 'img/group.jpg' %}" style="height: 250px;" alt="Avatar" class="image">
+  					<div class="overlay" style="opacity:0.8;background-color:rgb(10,0,150);">
+   					 <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut en est laborum</div>
+ 					 </div>
+     			</div>
+     			<div class="col-6">
+     				<center><h2>What We do</h2></center>
+     				<img src="{% static 'img/work.jpg' %}" style="height: 250px;" alt="Avatar" class="image">
+  					<div class="overlay" style="opacity:0.8;background-color:blue">
+   					 <div class="text" style="opacity:1;">perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab  </div>
+ 					 </div>
+     			</div>
+
+
+
+     		</div>
+     		<br><br><br><br>
+
+     </div>
+     <div id="contact"class="jumbotron jumbotron-fluid">
+  <div class="container">
+  	<center>
+    <h1>Contact us</h1></center>
+
+    <form>
+    	<div class="row"><div class="col-6">
+    	<textarea rows="5" name="message" class="form-control">i want to..
+
+    	</textarea>
+    </div>
+    	<div class="col-6">
+    	<input type="email" name="email" class="form-control" placeholder="your mail">
+    	<input type="text" name="nom" class="form-control" placeholder="your name"><br>
+    	<input type="button" name="submit" value="submit" class="btn btn-primary" style=" text-align: center; width: 200px;">
+    </div>
+    </div>
+    </form>
+    <br>
+  </div>
+
+</div>
+{%endblock%}

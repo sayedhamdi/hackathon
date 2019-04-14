@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>signUp</title>
+        {%load staticfiles%}
+        <link rel="stylesheet" href="{% static 'authenticate/style.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <body style="background-color: dedee2;">
+        <form id ="formulaire"action='{%url "signup"%}' method="POST">{%csrf_token%}
+            <div class="container-fuild" id="partie1">
+                <center>
+                <div style="background-color: white;width: 400px;height: 620px; margin : 30px 0 30px 0 ;   ">
+                    <img src="{% static 'img/logofinal.png' %}" style="height: 50px; width: 80px ; margin-top: 40px ;">
+                    <p style="font-family: Myriad Pro, sans-serif;font-weight: bold; margin-top: 35px; font-size: 35px;">sign up</p>
+                   <a href="#"><div style="background-color: 0077b7; width: 300px; height: 50px; "><div style="padding-top: 12px; "><p style="font-family: Myriad Pro, sans-serif; color: white ;font-weight: bold;font-size: 20px; ">Continue With LinkedIn</p></div></div></a>
+                   <hr style="display:inline-block; width:100px; padding-top:5px; margin-top:40px;"><span >or</span><hr style="display:inline-block; width:100px; padding-top: 5px ;margin-top:40px;"><br><br>
+                   <input name="email"type="text" placeholder="Email adress" style="width: 300px; height: 50px;"><br><br><br>
+                   <input name="password" type="password" placeholder="Password" style="width: 300px; height: 50px;"><br><br><br>
+                   <input class="btn" onclick="show2()"type="button"  value="join Us" style="background-color: #0e1724; width: 100px; color: white ;">
+
+                </div>
+            </center>
+        </div>
+        <div class="container-fuild" id="partie2" style="display: none;">
+
+                <center>
+                <div style="background-color: white;width: 400px;height: 450px; margin : 30px 0 30px 0 ;">
+                    <div id="back"><img src="{% static 'img/arrow.png' %}" style="margin-right:300px; width: 50px ; height: 50px;" onclick="show1()"/></div><br>
+                    <img src="{% static 'img/logofinal.png' %}" style="height: 50px; width: 80px ; margin-top: 40px ;">
+                    <p style="font-family: Myriad Pro, sans-serif;font-weight: bold; margin-top: 35px; font-size: 35px;">Choose a username</p>
+
+                   <input name ="username"type="text" placeholder="username" style="width: 300px; height: 50px;"><br><br><br>
+                   <input class="btn" type="button" onclick="show3()" value="Proceed" style="background-color: #0e1724; width: 100px; color: white ;">
+                </div>
+            </center>
+        </div>
+
+        <div class="container-fuild" id="partie3" style="display: none;" >
+
+                <center>
+                <div style="background-color: white;width: 400px;height: 650px; margin : 30px 0 30px 0 ;">
+                    <div id="back"><img src="{% static 'img/arrow.png' %}" style="margin-right:300px; width: 50px ; height: 50px;" onclick="show2()"  /></div><br>
+                    <img src="{% static 'img/logofinal.png' %}" style="height: 50px; width: 80px ; margin-top: 40px ;">
+                    <p style="font-family: Myriad Pro, sans-serif;font-weight: bold; margin-top: 35px; font-size: 35px;">We are almost done!</p>
+                    <p style="font-family: Myriad Pro, sans-serif; margin-top: 30px; font-size: 35px;">Select account type</p>
+                    <a href="#"id="1" ><div  style="width:300px; height:80px ; border: 1px solid gray;   box-shadow: 5px 10px #0e1724;  padding-top: 10px ;" class="job"><img src="{% static 'img/engineer.png' %}" style="width: 40px; height: 50px; text-align: left;  "><span style="font-family: Myriad Pro, sans-serif; font-size: 20px; text-align: center ">Want to Work</span></div></a>
+                   <br>
+
+                   <a href="#" id="2"><div  style="width:300px; height:80px ; border: 1px solid gray;   box-shadow: 5px 10px #0e1724;  padding-top: 10px ;" class="job"><img src="{% static 'img/businessman.png' %}"  style="width: 40px; height: 50px; text-align: left;  "><span style="font-family: Myriad Pro, sans-serif; font-size: 20px; text-align: center ">Want to Hire</span></div></a>
+                </div>
+            </center>
+        </div>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+    const partie1 = document.getElementById("partie1")
+    const partie2 =  document.getElementById("partie2")
+
+
+    function show2(){
+        partie1.style.display="none";
+        partie2.style.display="block";
+        const partie3 = docuement.getElementById("partie3")
+        partie3.style.display = "none";
+    }
+   function show1(){
+       partie1.style.display="block";
+       partie2.style.display="none";
+       partie3.style.display = "none";
+   }
+
+
+    function show3()
+    {
+        partie1.style.display="none";
+        partie2.style.display="none";
+        partie3.style.display="block";
+    }
+    var form = document.getElementById("formulaire");
+    document.getElementById("1").addEventListener("click", function () {
+  form.submit();
+});
+document.getElementById("2").addEventListener("click", function () {
+form.submit();
+});
+    </script>
+    </body>
+</html>

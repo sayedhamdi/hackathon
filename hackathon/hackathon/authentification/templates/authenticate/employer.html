@@ -1,0 +1,82 @@
+{%extends 'authenticate/base.html'%}
+{%block body%}
+
+     <div class="container-fluid wall">
+     	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     	<div class="row" style="background-color: rgba(14,23,36,0.3); height: 400px; ">
+               <div class="col-md-2"></div>
+     		<div class="col-md-3"style="margin-top: 200px;">
+     			<input type="text" name=" search" placeholder="motclé" class="form-control search">
+     		</div>
+     		<div class="col-md-3" style="margin-top: 200px;">
+     			<input type="text" name=" search" placeholder="location" class="form-control search">
+     		</div>
+               <div class="col-md-2" style="margin-top: 200px;">
+                    <button class="btn btn-primary search" style="width:100px">Search</button>
+               </div>
+     	</div>
+
+     </div>
+     <div class="boxes">
+     <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop">
+          <div class="titre">
+              <center> <h3>for interviews</h3></center>
+               <hr noshade="" size="3px">
+          </div>
+          <div class="icon">
+             <center>  <i class="far fa-calendar-check" style="font-size:150px;"></i><br><span id="number">1</span></center>
+          </div>
+
+     </div>
+		 	<br><br>
+    </div>
+
+
+
+     <div class="container employeur" style="">
+          <br><br><br>
+          <h2 style="color: #0e1724;">votre resultat de recherche</h2>
+          <hr noshade="" size="3px" style="color: #0e1724;">
+          <div class="row">
+               <div class="col-md-6">
+								 {% for condidate in condidates%}
+                    <div id="{{condidate.id}}" class="card post" style="width:400px" draggable="true" ondragstart="drag(event)">
+                    <div class="card-body">
+	                    <h4 class="card-title">John Doe</h4>
+	                    <p class="card-text">{{condidate.profil}}</p>
+	                    	<h4>{{condidate.city}}</h4>
+	                    	<hr>
+	                    	<h4>expirience</h4>
+	                    	<span> {{condidate.experience}} years</span>
+		                    <h4>education</h4><span>{{condidate.diploma}}</span>
+		                    <hr>
+	                    	<h4>skills</h4>
+	                    	<p>{{condidate.skills}}</p>
+	                    	<a href="#" class="btn btn-primary stretched-link">See Profile</a>
+    							</div>
+
+  							</div>
+								{%endfor%}
+
+
+               </div>
+
+          </div><br><br><br>
+					<center><button id="compare" class="btn btn-primary">compare</button></center>
+          </div>
+					<center>
+					<div id="comparaison" style="display:none;">
+						<div class="row">
+							<div class="col-md-6" id="myForm">
+							</div>
+							<div class="col-md-6" id="myForm1">
+							</div>
+						</div>
+					</center>
+					</div>
+
+
+
+
+{%endblock%}
+{%block footer%}{%endblock%}

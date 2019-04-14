@@ -1,0 +1,175 @@
+{% load staticfiles %}
+*{
+	padding: 0px;
+	margin:0px;
+}
+.menu{
+
+	background-color: #0e1724;
+	box-shadow:0px 2px 5px grey;
+}
+nav li{
+	padding-left: 20px;
+}
+
+.nav-link{
+	font-size: 20px;
+}
+.menu img {
+	height: 40px;
+}
+
+.wall{
+	background-color: rgba(14,23,36,0.3);
+	background-image: url('../img/wall.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	 background-attachment: fixed;
+	height: 900px;
+
+}
+.carousel-inner img {
+    width: 200px;
+    height: 200px;
+  }
+  .container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.container:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+footer{
+	background-color: #0e1724;
+}
+.container{
+	box-shadow: 2px 0px 5px grey;
+}
+.search{
+	margin-left:100px;
+	margin-right: 100px;
+
+}
+.job:hover
+{
+    background-color: #367ee4 ;
+
+}
+.employeur{
+	margin-bottom: 500px!important;
+}
+.box
+{
+    position: sticky;
+    right: 0px;
+    top:100px;
+
+    box-shadow: 2px ,2px ,5px grey;
+    width: 300px;
+
+    border: 3px solid  #0e1724;
+    border-radius: 25px;
+
+}
+.titre
+{
+    background-color: #2169fd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.icon{
+    height: 200px;
+}
+.boxes{
+
+    float: right;
+    position: sticky;
+    right: 0px;
+    top:100px;
+}
+#div1,#div2 {
+width: 350px;
+height: 70px;
+padding: 10px;
+border: 1px solid #aaaaaa;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the contact form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  width:500px;
+}
+#myForm{
+  bottom: 100px;
+  right: 40px;
+}
+#myForm1{
+  bottom: 100px;
+  right: 600px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  border:10px solid black;
+  max-width: 200px;
+  padding: 10px;
+  background-color: white;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+    {%block title%}
+    {%endblock%}
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootsrap and fontawesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'authenticate/style.css' %}"/>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md navbar-light  sticky-top menu" >
+     	<div class="container-fluid " style="margin-right: 50px;" >
+     		<a class="navbar-brand" href="{%url 'home'%}">
+					<img  src="{% static 'img/logofinal.png' %}">
+				</a>
+
+     		<button class="navbar-toggler" type="button" data-target="#navbarResponsive" data-toggle="collapse">
+     			<span class="navbar-toggler-icon"></span>
+     		</button>
+
+     		<div class="collapse navbar-collapse" id="navbarResponsive">
+     			<ul class="navbar-nav ml-auto">
+            {%if user %}
+            <li class="nav-item">
+               <a href="{%url 'index'%}" class="nav-link" style="color: #fff;">{{user.username}}</a>
+             </li>
+            {%endif%}
+             <li class="nav-item">
+               <a href="#about" class="nav-link" style="color: #2169fd;">About us</a>
+             </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" style="color: #2169fd;">Contact</a>
+          </li>
+					{%block nav%}
+					<li class="nav-item">
+						<a href="{%url 'index' %}" class="nav-link"> <i class="fas fa-sign-in-alt" style="color: #2169fd;"></i></a>
+					</li>
+					{%endblock%}
+
+        </ul>
+
+     		</div>
+     	</div>
+     </nav>
+    {%block body%}
+    {%endblock%}
+		{%block footer%}
+		<footer style="color:white; padding-top:70px;">
+        <div class="container" style="box-shadow: 0px 0px 0px">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <h2> contact</h2>
+                    <hr noshade="">
+                    <p>tel:28385771</p>
+
+                    <p>fax:22565785</p>
+                    <p>
+                    mail: benchiekhmouheb@gmail.com</p>
+                    <br><center style="font-size: 30px;"><a href=""><i class="fab fa-facebook-square" style="color: white;"></i></a>
+                    <a href=""><i class="fab fa-instagram" style="color: white;"></i></a>
+                    <a href=""><i class="fab fa-linkedin" style="color: white;"></i></a></center>
+                </p>
+
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h2>adresse</h2>
+                    <hr noshade size="30">
+                    <p>
+                        come find us in:<br>
+
+
+St. la bourse, building El Wafa, Bloc A 2nd floor, Lac 2, Tunis, Tunisia
+
+                    </p>
+
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h2>newsteller</h2>
+                    <hr noshade="">
+                    <p>
+                        enter your mail here to get all of our best offers :
+                        <br>
+                        <input type="mail" name="mail">
+                        <input class="btn btn-primary"type="submit" name="envoyer" value="submit">
+                    </p>
+
+                </div>
+
+            </div>
+            <br><br><br>
+
+        </div>
+
+
+
+    </footer>
+		{%endblock%}
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="{%static 'authenticate/main.js' %}"></script>
+</html>

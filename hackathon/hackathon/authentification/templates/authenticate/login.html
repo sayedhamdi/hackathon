@@ -1,0 +1,37 @@
+
+{%extends "authenticate/base.html"%}
+{%block title%}
+login
+{%endblock%}
+{%block body%}
+
+  {%load staticfiles%}
+<form action="{%url 'login' %}" method="POST">
+  {%csrf_token%}
+  <body style="background-color: #dedee2;">
+      <form action='{%url "signup"%}' method="POST">{%csrf_token%}
+          <div class="container-fuild" id="partie1">
+
+              <center>
+              <div style="background-color: white;width: 400px;height: 620px; margin : 30px 0 30px 0 ;   ">
+                {%if message%}
+                <div class="alert alert-primary " role="alert">
+                  {{message}}
+                </div>
+                {%endif%}
+                  <img src="{% static 'img/logofinal.png' %}" style="height: 50px; width: 80px ; margin-top: 40px ;">
+                  <p style="font-family: Myriad Pro, sans-serif;font-weight: bold; margin-top: 35px; font-size: 35px;">Login</p>
+                 <hr style="display:inline-block; width:100px; padding-top:5px; margin-top:40px;"><hr style="display:inline-block; width:100px; padding-top: 5px ;margin-top:40px;"><br><br>
+                 <input name="username"type="text" placeholder="username" style="width: 300px; height: 50px;"><br><br><br>
+                 <input name="password" type="password" placeholder="Password" style="width: 300px; height: 50px;"><br><br><br>
+                 <input class="btn" type="submit"  value="Login In" style="background-color: #0e1724; width: 100px; color: white ;"><br><br>
+                 <a href="{%url 'signup'%}"><input class="btn" type="button"  value="Sign up" style="background-color: #0e1724; width: 100px; color: white ;"></a>
+              </div>
+          </center>
+      </div>
+</form>
+
+{%endblock%}
+{%block footer%}
+
+{%endblock%}
